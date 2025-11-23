@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/n8n-nodes-textdotlk.svg)](https://www.npmjs.com/package/n8n-nodes-textdotlk)
 [![npm downloads](https://img.shields.io/npm/dm/n8n-nodes-textdotlk.svg)](https://www.npmjs.com/package/n8n-nodes-textdotlk)
-[![GitHub license](https://img.shields.io/github/license/NPFernando/n8n-nodes-textdotlk.svg)](LICENSE)
+[![GitHub license](https://img.shields.io/github/license/NPFernando/n8n-nodes-textdotlk.svg)](<[LICENSE](https://github.com/NPFernando/n8n-nodes-textdotlk/blob/main/LICENSE.md)>)
 [![GitHub issues](https://img.shields.io/github/issues/NPFernando/n8n-nodes-textdotlk.svg)](https://github.com/NPFernando/n8n-nodes-textdotlk/issues)
 
 This is an n8n community node package for the [Text.lk](https://text.lk) service. It allows you to integrate Text.lk SMS functionality into your n8n workflows.
