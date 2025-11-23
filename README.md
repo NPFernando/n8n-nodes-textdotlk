@@ -1,12 +1,32 @@
 # n8n-nodes-textdotlk
 
+[![npm version](https://img.shields.io/npm/v/n8n-nodes-textdotlk.svg)](https://www.npmjs.com/package/n8n-nodes-textdotlk)
+[![npm downloads](https://img.shields.io/npm/dm/n8n-nodes-textdotlk.svg)](https://www.npmjs.com/package/n8n-nodes-textdotlk)
+[![GitHub license](https://img.shields.io/github/license/NPFernando/n8n-nodes-textdotlk.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/NPFernando/n8n-nodes-textdotlk.svg)](https://github.com/NPFernando/n8n-nodes-textdotlk/issues)
+
 This is an n8n community node package for the [Text.lk](https://text.lk) service. It allows you to integrate Text.lk SMS functionality into your n8n workflows.
 
 [n8n](https://n8n.io/) is a fair-code licensed workflow automation platform.
 
 ## Installation
 
+### Community Nodes (Recommended)
+
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+1. Go to **Settings → Community Nodes**
+2. Select **Install a community node**
+3. Enter `n8n-nodes-textdotlk`
+4. Click **Install**
+
+### npm
+
+To use this node in your n8n installation, you can install it via npm:
+
+```bash
+npm install n8n-nodes-textdotlk
+```
 
 ## Operations
 
