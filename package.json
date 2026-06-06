@@ -8,15 +8,14 @@
 		"n8n-community-node-package"
 	],
 	"author": {
-		"name": "Naveen Fernando",
-		"email": "fernandonaveen2000@gmail.com"
+		"name": "Naveen Fernando"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/NPFernando/n8n-nodes-textdotlk.git"
 	},
 	"bugs": {
-  		"url": "https://github.com/NPFernando/n8n-nodes-textdotlk/issues"
+		"url": "https://github.com/NPFernando/n8n-nodes-textdotlk/issues"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -25,10 +24,14 @@
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
+		"prepublishOnly": "n8n-node prerelease",
+		"validate:package": "npm run lint && npm run build && npm run audit:prod && npx tsc --noEmit && npm pack --dry-run",
+		"audit:prod": "npm audit --omit=dev --audit-level=critical"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"!dist/**/*.tsbuildinfo",
+		"!dist/*.tsbuildinfo"
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
@@ -41,13 +44,17 @@
 		]
 	},
 	"devDependencies": {
-		"@n8n/node-cli": "*",
-		"eslint": "9.32.0",
+		"@n8n/node-cli": "0.34.0",
+		"eslint": "9.29.0",
 		"prettier": "3.6.2",
-		"release-it": "^19.0.4",
+		"release-it": "^20.2.0",
 		"typescript": "5.9.2"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
+	},
+	"engines": {
+		"node": ">=20.19 <23",
+		"npm": ">=10"
 	}
 }

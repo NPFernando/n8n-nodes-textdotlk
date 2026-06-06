@@ -15,7 +15,7 @@ export const groupCreateDescription: INodeProperties[] = [
 		displayOptions: {
 			show: showOnlyForGroupCreate,
 		},
-		description: 'The name of the group',
+		description: 'Group name to send to Text.lk. Avoid control characters and unnecessary personal data.',
 		routing: {
 			send: {
 				type: 'body',

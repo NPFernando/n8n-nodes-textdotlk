@@ -11,10 +11,12 @@ export const groupDeleteDescription: INodeProperties[] = [
 		name: 'uid',
 		type: 'string',
 		default: '',
+		validateType: 'string-alphanumeric',
+		placeholder: 'abc123',
 		required: true,
 		displayOptions: {
 			show: showOnlyForGroupDelete,
 		},
-		description: 'The unique ID of the group',
+		description: 'The route-safe Text.lk group UID. Use only letters and numbers; do not include slashes, spaces, or query strings.',
 	},
 ];

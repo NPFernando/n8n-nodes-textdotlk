@@ -11,11 +11,12 @@ export const smsSendDescription: INodeProperties[] = [
 		name: 'recipient',
 		type: 'string',
 		default: '',
+		placeholder: '94771234567',
 		required: true,
 		displayOptions: {
 			show: showOnlyForSmsSend,
 		},
-		description: 'The mobile number of the recipient (e.g. 94771234567)',
+		description: 'Recipient mobile number in Text.lk-supported international format, for example 94771234567. Avoid spaces, plus signs, and punctuation unless Text.lk explicitly supports them.',
 		routing: {
 			send: {
 				type: 'body',
@@ -28,11 +29,13 @@ export const smsSendDescription: INodeProperties[] = [
 		name: 'sender_id',
 		type: 'string',
 		default: '',
+		validateType: 'string-alphanumeric',
+		placeholder: 'TEXTLK',
 		required: true,
 		displayOptions: {
 			show: showOnlyForSmsSend,
 		},
-		description: 'The Sender ID to use',
+		description: 'Approved Text.lk sender ID. Use a short alphanumeric sender name and avoid control characters.',
 		routing: {
 			send: {
 				type: 'body',
@@ -66,11 +69,12 @@ export const smsSendDescription: INodeProperties[] = [
 		name: 'message',
 		type: 'string',
 		default: '',
+		placeholder: 'Your message text',
 		required: true,
 		displayOptions: {
 			show: showOnlyForSmsSend,
 		},
-		description: 'The message content',
+		description: 'SMS message content. Do not include secrets or sensitive one-time credentials unless the workflow is designed and approved for that use case.',
 		routing: {
 			send: {
 				type: 'body',
@@ -86,7 +90,7 @@ export const smsSendDescription: INodeProperties[] = [
 		displayOptions: {
 			show: showOnlyForSmsSend,
 		},
-		description: 'Time to schedule the SMS (Y-m-d H:i)',
+		description: 'Time to schedule the SMS. Confirm the Text.lk account timezone and expected API format before using scheduled sends.',
 		routing: {
 			send: {
 				type: 'body',

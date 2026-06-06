@@ -11,11 +11,13 @@ export const groupUpdateDescription: INodeProperties[] = [
 		name: 'uid',
 		type: 'string',
 		default: '',
+		validateType: 'string-alphanumeric',
+		placeholder: 'abc123',
 		required: true,
 		displayOptions: {
 			show: showOnlyForGroupUpdate,
 		},
-		description: 'The unique ID of the group',
+		description: 'The route-safe Text.lk group UID. Use only letters and numbers; do not include slashes, spaces, or query strings.',
 	},
 	{
 		displayName: 'Name',
@@ -26,7 +28,7 @@ export const groupUpdateDescription: INodeProperties[] = [
 		displayOptions: {
 			show: showOnlyForGroupUpdate,
 		},
-		description: 'The name of the group',
+		description: 'Group name to send to Text.lk. Avoid control characters and unnecessary personal data.',
 		routing: {
 			send: {
 				type: 'body',

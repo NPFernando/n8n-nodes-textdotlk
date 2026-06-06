@@ -1,12 +1,13 @@
 import {
 	INodeType,
 	INodeTypeDescription,
+	NodeConnectionTypes,
 } from 'n8n-workflow';
 
-import { profileDescription } from './resources/profile';
-import { smsDescription } from './resources/sms';
 import { contactDescription } from './resources/contact';
 import { groupDescription } from './resources/group';
+import { profileDescription } from './resources/profile';
+import { smsDescription } from './resources/sms';
 
 export class TextDotLk implements INodeType {
 	description: INodeTypeDescription = {
@@ -21,8 +22,8 @@ export class TextDotLk implements INodeType {
 			name: 'Text.lk',
 		},
 		usableAsTool: true,
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'textDotLkApi',
@@ -44,20 +45,20 @@ export class TextDotLk implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Profile',
-						value: 'profile',
-					},
-					{
-						name: 'SMS',
-						value: 'sms',
-					},
-					{
 						name: 'Contact',
 						value: 'contact',
 					},
 					{
 						name: 'Group',
 						value: 'group',
+					},
+					{
+						name: 'Profile',
+						value: 'profile',
+					},
+					{
+						name: 'SMS',
+						value: 'sms',
 					},
 				],
 				default: 'sms',

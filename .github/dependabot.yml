@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      n8n-tooling:
+        patterns:
+          - "@n8n/*"
+          - "n8n-workflow"
+      dev-tooling:
+        dependency-type: development

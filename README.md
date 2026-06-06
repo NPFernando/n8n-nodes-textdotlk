@@ -68,10 +68,43 @@ You need a Text.lk API Access Token to use this node.
 ## Compatibility
 
 - Tested against n8n version 1.0.0+.
+- Development and CI validation use Node.js 20 LTS or newer compatible with the n8n community-node tooling.
 
 ## Usage
 
 This node allows you to automate SMS sending and contact management using the Text.lk API. Ensure you have a valid API key and sufficient credit in your Text.lk account.
+
+## Package
+
+- npm: <https://www.npmjs.com/package/n8n-nodes-textdotlk>
+- Repository: <https://github.com/NPFernando/n8n-nodes-textdotlk>
+
+## Security
+
+- Store your Text.lk token only in n8n credentials.
+- Do not hardcode tokens in workflows, exported workflow JSON, or repository files.
+- Route identifier fields are constrained to route-safe alphanumeric values where n8n supports runtime field validation.
+- SMS/contact fields include safer format guidance to avoid malformed API requests and accidental sensitive-data exposure.
+- CI blocks critical production dependency advisories with `npm run audit:prod`. Current n8n upstream dependency trees can still report non-critical advisories; keep Dependabot enabled and review those updates as they become available.
+- Open a GitHub issue for suspected package or node security issues. Do not include real tokens, customer phone numbers, or message contents in public reports.
+
+## Development
+
+Prerequisites:
+
+- Node.js 20 LTS or newer
+- npm 10+
+
+```bash
+npm ci --ignore-scripts
+npm run lint
+npm run build
+npx tsc --noEmit
+npm run audit:prod
+npm pack --dry-run
+```
+
+Use `npm run validate:package` for the standard local validation gate before publishing or opening a pull request.
 
 ## Resources
 
@@ -80,6 +113,7 @@ This node allows you to automate SMS sending and contact management using the Te
 
 ## Version history
 
+- **Unreleased**: Harden dependency tooling, CI validation, package metadata, and safer parameter guidance.
 - **0.1.0**: Initial release with SMS, Contact, Group, and Profile operations.
 
 ## License
