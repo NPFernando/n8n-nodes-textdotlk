@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-textdotlk",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Custom N8N nodes for textdot.lk service",
 	"license": "MIT",
 	"homepage": "https://github.com/NPFernando/n8n-nodes-textdotlk#readme",
