@@ -117,7 +117,7 @@ npm run smoke:n8n:docker
 Optional overrides:
 
 ```bash
-PACKAGE_VERSION=0.1.3 HOST_PORT=5680 npm run smoke:n8n:docker
+PACKAGE_VERSION=0.1.4 HOST_PORT=5680 npm run smoke:n8n:docker
 ```
 
 ## Resources
@@ -127,7 +127,7 @@ PACKAGE_VERSION=0.1.3 HOST_PORT=5680 npm run smoke:n8n:docker
 
 ## Version history
 
-- **Unreleased**: Harden dependency tooling, CI validation, package metadata, and safer parameter guidance.
+- **0.1.4**: Add npm Trusted Publishing provenance, stricter CI validation, Docker-based n8n install/load smoke testing, package metadata hardening, and safer parameter guidance.
 - **0.1.0**: Initial release with SMS, Contact, Group, and Profile operations.
 
 ## License
