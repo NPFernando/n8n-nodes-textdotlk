@@ -68,6 +68,8 @@ You need a Text.lk API Access Token to use this node.
 ## Compatibility
 
 - Tested against n8n version 1.0.0+.
+- Docker smoke-tested with the current `n8nio/n8n:latest` image, including community-node installation, n8n startup, `/healthz`, and `n8n export:nodes` registration checks.
+- Runtime metadata supports Node.js `>=20.19 <25` to match current n8n community-node tooling and the latest n8n Docker image.
 - Development and CI validation use Node.js 20 LTS or newer compatible with the n8n community-node tooling.
 
 ## Usage
@@ -105,6 +107,18 @@ npm pack --dry-run
 ```
 
 Use `npm run validate:package` for the standard local validation gate before publishing or opening a pull request.
+
+To verify the published package in a real n8n container:
+
+```bash
+npm run smoke:n8n:docker
+```
+
+Optional overrides:
+
+```bash
+PACKAGE_VERSION=0.1.3 HOST_PORT=5680 npm run smoke:n8n:docker
+```
 
 ## Resources
 
