@@ -71,5 +71,14 @@ if ! docker exec "$CONTAINER_NAME" sh -lc 'grep -q "Text.lk" /tmp/nodes.json && 
   exit 1
 fi
 
-docker exec "$CONTAINER_NAME" sh -lc 'grep -o "n8n-nodes-textdotlk.textDotLk[^"]*" /tmp/nodes.json | sort -u'
+docker exec "$CONTAINER_NAME" sh -lc 'node - <<"NODE"
+const fs = require("fs");
+const nodes = JSON.parse(fs.readFileSync("/tmp/nodes.json", "utf8"));
+for (const node of nodes) {
+  const name = node.name || "";
+  if (name.startsWith("n8n-nodes-textdotlk.textDotLk")) {
+    console.log(name);
+  }
+}
+NODE'
 echo "n8n Docker smoke test passed for ${PACKAGE_NAME}@${PACKAGE_VERSION}"
